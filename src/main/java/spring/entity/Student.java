@@ -17,6 +17,8 @@ public class Student {
 	@Column(name = "student_city")
 	private String city;
 	
+	private CourseCertificate certificate;
+	
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -45,6 +47,14 @@ public class Student {
 	public void setCity(String city) {
 		this.city = city;
 	}
+	public CourseCertificate getCertificate() {
+		return certificate;
+	}
+
+	public void setCertificate(CourseCertificate certificate) {
+		this.certificate = certificate;
+	}
+
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", city=" + city + "]";

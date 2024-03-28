@@ -1,0 +1,1 @@
+@Embeddable annotation is used to add the columns of other refrence class.
