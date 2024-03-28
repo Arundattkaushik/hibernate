@@ -38,7 +38,8 @@ public class Address {
 	@Temporal(TemporalType.DATE)
 	private Date addedDate;
 
-	@Lob
+	@Lob()
+	@Column(columnDefinition = "BLOB")
 	private byte[] image;
 
 	public Address() {

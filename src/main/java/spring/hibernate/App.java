@@ -1,5 +1,7 @@
 package spring.hibernate;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Date;
 
 import org.hibernate.Session;
@@ -16,7 +18,7 @@ import spring.entity.Student;
 public class App 
 {
     @SuppressWarnings("deprecation")
-	public static void main( String[] args )
+	public static void main( String[] args ) throws IOException
     {
         System.out.println( "Program Started.........." );
         SessionFactory factory = new Configuration().configure("spring/hibernate/hibernate.cfg.xml").buildSessionFactory();
@@ -27,6 +29,13 @@ public class App
         address.setIsOpen(true);
         address.setStreet("B Block RN 32");
         address.setX(43.25);
+        
+        //Reading image
+        FileInputStream fis = new FileInputStream("image/userIcon.png");
+        byte[] data = new byte[fis.available()];
+        fis.read(data);
+        address.setImage(data);
+        
         
         //Here we are opening a transaction
         Session session = factory.openSession();

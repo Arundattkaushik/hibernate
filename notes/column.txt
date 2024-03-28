@@ -1,0 +1,2 @@
+to change/set column attribut we set these values under @Column() annotations 
+Example:- @Column(columnDefinition="BLOB") 
