@@ -20,6 +20,7 @@ public class OneToOneDemo {
 		
 		questions.setQuestion("What is java");
 		answers.setAnswer("Java is a programming language");
+		answers.setQuestions(questions);
 		questions.setAnswers(answers);
 		
 		session.save(questions);
@@ -27,6 +28,12 @@ public class OneToOneDemo {
 		
 		session.getTransaction().begin();
 		session.getTransaction().commit();
+		
+		Questions q1 = session.get(Questions.class, 1);
+		Answers a1 = session.get(Answers.class, 1);
+		
+		System.out.println(q1.getQuestion()+" = "+a1.getQuestions().getAnswers().getAnswer());
+		
 		session.close();
 		factory.close();
 	}
