@@ -18,3 +18,5 @@ the name as mentioned in the braces of @Column.
 be saved.
 
 @Lob - @Lob over a field tells hibernate that this is a large object not a simple object.
+
+@JoinColumn - @JoinColumn is used to rename/set a column name which is a forgin key for other table as @Column annotation can not be used here

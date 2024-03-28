@@ -14,5 +14,7 @@
 		<property name="show_sql">true</property>
 		<mapping class="spring.entity.Student"/>
 		<mapping class="spring.entity.Address"/>
+		<mapping class="spring.one2onemapping.Questions" />
+		<mapping class="spring.one2onemapping.Answers" />
 	</session-factory>
 </hibernate-configuration>
