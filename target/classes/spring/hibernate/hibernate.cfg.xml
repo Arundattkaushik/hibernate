@@ -10,11 +10,13 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password"></property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="hbm2ddl.auto">create</property>
-		<property name="show_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="show_sql">false</property>
 		<mapping class="spring.entity.Student"/>
 		<mapping class="spring.entity.Address"/>
 		<mapping class="spring.one2onemapping.Questions" />
 		<mapping class="spring.one2onemapping.Answers" />
+		<mapping class="spring.many2one.Ans" />
+		<mapping class="spring.many2one.Ques" />
 	</session-factory>
 </hibernate-configuration>
