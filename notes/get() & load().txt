@@ -1,0 +1,22 @@
+==============================// Get & Load //========================
+get() is a method present in sessionFactor interface
+with the help of this method we can get the data from database. shown in GetData.java class
+
+load() also works the same way get() works
+
+Difference between get() & load()
+
+1.
+get() method of Hibernate session returns null if data is not found in cache as well as on database.
+load() method of Hibernate session throws ObjectNotFoundException if object is not found on cache as well as on database but never returns null.
+
+2.
+get(), involves database hit if object does not exists in Hibernate session memory and returns a fully initialized object which may involve several
+database call.
+
+load(), on the other hand can only return proxy in place and only initialize the object or hit the database if any method other than getId() is called on 
+persistant or entity object. This lazy initiallization increases the performance.
+
+3. 
+get(), use it only when you are not sure that object exists in db or not.
+load(), use if you are sure that object exists 
