@@ -2,12 +2,15 @@ package spring.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Student {
 	@Id
 	@Column(name = "student_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "student_name")
 	private String name;
@@ -19,9 +22,8 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Student(int id, String name, String city) {
+	public Student(String name, String city) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.city = city;
 	}
