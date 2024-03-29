@@ -41,6 +41,8 @@ public class Cascade {
 //		session.save(r2);
 //		session.save(r3);
 		
+//		session.delete(message);
+		
 		session.getTransaction().begin();
 		session.getTransaction().commit();
 		

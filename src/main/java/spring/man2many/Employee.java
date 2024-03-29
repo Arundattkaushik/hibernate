@@ -9,6 +9,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 
 @Entity
+//These two annotation below are used to enable second level cache for this class.
+//@Cacheable
+//@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
 public class Employee {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

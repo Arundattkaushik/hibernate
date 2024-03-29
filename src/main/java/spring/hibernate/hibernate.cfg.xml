@@ -10,18 +10,27 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password"></property>
 		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-		<property name="hbm2ddl.auto">create</property>
+		
+		<!-- hbm2ddl.auto has 2 values create/update -> create means a table is created every time by deleting the older one
+		update means if no table exists then a table is created else the existing table is updated with new data -->
+		
+		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
+		
+		<!-- Enabling Second level cache -->
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>	
+		
 	<!-- <mapping class="spring.entity.Student" />
 		<mapping class="spring.entity.Address" />
 		<mapping class="spring.one2onemapping.Questions" />
 		<mapping class="spring.one2onemapping.Answers" />
 		<mapping class="spring.many2one.Ans" />
 		<mapping class="spring.many2one.Ques" />
-		<mapping class="spring.many2many.Post" /> 
+		<mapping class="spring.many2many.Post" /> -->
 		<mapping class="spring.man2many.Employee" />
-		<mapping class="spring.man2many.Project" /> -->
+		<mapping class="spring.man2many.Project" /> 
 		<mapping class="spring.cascade.Message"/>
 		<mapping class="spring.cascade.Reply"/>
 	</session-factory>
