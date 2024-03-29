@@ -1,0 +1,17 @@
+There are two types of fetch type, eager & lazy namely.
+
+Lazy Loading:-
+In lazy loading, associated data loads only when we explicitly call the getter 
+or setter method
+
+Eager Loading:-
+It is a design pattern in which data loading occurs on the spot
+
+Example:- Let's say we have a question which is associated with N number of answers then
+
+In case of Lazy loading:- if we load the question then answers will not load until we explicitly
+call the getter method. Means only question will be loaded.
+
+But 
+In case of Eager loading:- if we load the question then all the answers associated to it will be loaded 
+at the time of loading we don't need to call getter method of question explicitly.

@@ -85,12 +85,12 @@ public class Man2ManyDemo {
 		Employee e = session.get(Employee.class, 1);
 		System.out.println(e.getName());
 		
-		System.out.println("You are working ");
+		System.out.println("You are working on following projects: ");
 		for (Project p : e.getProjects()) {
 			System.out.println(" "+p.getProject());
 		}
 		
-		System.out.println("Other employees who are working on this project");
+		System.out.println("Other employees who are working on this project including you are: ");
 		Project p = session.get(Project.class, 1);
 		for (Employee emp : p.getEmployees()) {
 			System.out.println(" "+emp.getName());

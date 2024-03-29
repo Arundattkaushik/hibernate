@@ -1,0 +1,39 @@
+Hibernate lifecycle means the states of object which occur 
+when an object is saved by hibernate into the database.
+
+There are following 4 stages which occur.
+1. Transient State
+2. Persistent State
+3. Detached State
+4. Removed State 
+
+ Transient State::
+ An object is said to be in a Transient state when it is 
+ created and fully initialized.
+ 
+ Example: Student s = new Student(1, "Ram");
+ Now 's' is in Transient state.
+ 
+ An object's transient state also means that this object is 
+ not attached to session yet.
+ 
+ Persistent State::
+ Once we try to save this object with the help of session
+ it means this object is now in 'Persistent state" under this 
+ state this object is attached with session and also session saves this
+ object in DB which means it also persists in DB.
+ *Note: If we make any changes in the object/data's property under
+ persistent state, then this makes in both session object and in DB(table) after commit.
+ 
+ 
+Detached State::
+Once we call session.close()/clear() means we detach the object from
+persistent state and now object is in a new state called detached state.
+
+ Now your object is not associated with session but the same object with old value lies in DB.
+ 
+ 
+ Removed State::
+ Once we call session.delete() it means we deleted the data from DB but it is still 
+ associated with session object.
+ 
